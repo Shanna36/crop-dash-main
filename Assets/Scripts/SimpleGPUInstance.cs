@@ -15,7 +15,7 @@ public class SimpleGPUInstance : MonoBehaviour
     public float fieldStartZ = 100;
     public float fieldEndZ = 200;
 
-    private List<List<Matrix4x4>> Batches = new List<List<Matrix4x4>>(); // Batches of 1,023
+    public List<List<Matrix4x4>> Batches = new List<List<Matrix4x4>>(); // Batches of 1,023
 
     private void RenderBatches()
     {
@@ -62,7 +62,7 @@ public class SimpleGPUInstance : MonoBehaviour
                 Matrix4x4 matrix = Matrix4x4.TRS(
                     new Vector3(x, y, z),                     // position
                     Quaternion.identity,                       // rotation
-                    new Vector3(8.0f, 8.0f, 8.0f)          // scale (adjust as necessary)
+                    new Vector3(6.0f, 6.0f, 6.0f)          // scale (adjust as necessary)
                 );
 
                 // Add to the current batch
