@@ -8,9 +8,11 @@ public class WheatDestroyer : MonoBehaviour
 
     private List<List<Matrix4x4>> batches;
 
+    // Add a reference to the particle prefab
+    public GameObject wheatDestroyParticles; 
+
     void Start()
     {
-        // Automatically get the collider from the current GameObject
         combineCollider = GetComponent<Collider>();
 
         if (combineCollider == null)
@@ -18,31 +20,47 @@ public class WheatDestroyer : MonoBehaviour
             Debug.LogError("No Collider found on the Combine Harvester. Make sure the script is attached to the object with the Capsule Collider.");
         }
 
-        // Get a reference to the batches from the wheat spawner
         batches = wheatSpawner.Batches;
     }
 
     void Update()
     {
-        // Loop through the wheat matrices and check for collisions
         for (int batchIndex = 0; batchIndex < batches.Count; batchIndex++)
         {
             List<Matrix4x4> batch = batches[batchIndex];
 
-            for (int i = batch.Count - 1; i >= 0; i--) // Iterate backwards so removal doesn't mess up the indexing
+            for (int i = batch.Count - 1; i >= 0; i--)
             {
-                Vector3 wheatPosition = batch[i].GetColumn(3); // Get the position from the matrix
-                Bounds wheatBounds = new Bounds(wheatPosition, new Vector3(1f, 1f, 1f)); // Approximate bounds for wheat
-                
-                // Check if the combine harvester's collider intersects the wheat
+                Vector3 wheatPosition = batch[i].GetColumn(3);
+                Bounds wheatBounds = new Bounds(wheatPosition, new Vector3(1f, 1f, 1f));
+
                 if (combineCollider.bounds.Intersects(wheatBounds))
                 {
                     // Remove the wheat from the batch
                     batch.RemoveAt(i);
 
-                    // Optionally: Trigger particle effects here when wheat is destroyed
+                    // Trigger particle effects when wheat is destroyed
+                    TriggerParticleEffect(wheatPosition);
                 }
             }
         }
+    }
+
+    private void TriggerParticleEffect(Vector3 position)
+    {
+        // Instantiate the particle system at the position of the wheat destroyed
+        GameObject particles = Instantiate(wheatDestroyParticles, position, Quaternion.identity);
+        
+        // Optionally, set the upward diagonal velocity here if needed
+        ParticleSystem ps = particles.GetComponent<ParticleSystem>();
+        if (ps != null)
+        {
+            var main = ps.main;
+            main.startSpeed = 2; // Set the speed for upward motion
+            main.startLifetime = 3; // Ensure lifetime matches the fade duration
+        }
+
+        // Destroy the particle system after its lifetime
+        Destroy(particles, 3f);
     }
 }

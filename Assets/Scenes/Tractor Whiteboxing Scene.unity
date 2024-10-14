@@ -518,10 +518,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 1.6252229
-  m_Height: 18.132376
+  m_Radius: 1.625223
+  m_Height: 18.387554
   m_Direction: 0
-  m_Center: {x: -0.30567837, y: 1.49, z: 8.580662}
+  m_Center: {x: -0.1780882, y: 1.4899964, z: 8.580668}
 --- !u!114 &24573648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -535,6 +535,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheatSpawner: {fileID: 1150709296}
+  wheatDestroyParticles: {fileID: 6942039571328496782, guid: 3762281f58f2241deae7738af0d8f777, type: 3}
 --- !u!1001 &32758617
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6139,7 +6140,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 780121941}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0681619699b9045e494ac871bbaedcad, type: 3}

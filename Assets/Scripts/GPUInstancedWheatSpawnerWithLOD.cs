@@ -134,6 +134,7 @@ public class GPUInstancedWheatSpawnerWithLOD : MonoBehaviour
             if (visibleMatrices.Count > 0)
             {
                 Graphics.DrawMeshInstanced(lodMeshes[lodIndex], 0, lodMaterials[lodIndex], visibleMatrices, propertyBlocksPerLOD[lodIndex]);
+                //Graphics.DrawMeshInstanced (Mesh, Submesh Index, Material)
             }
         }
     }
