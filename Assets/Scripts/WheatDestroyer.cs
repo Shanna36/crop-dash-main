@@ -51,7 +51,7 @@ public class WheatDestroyer : MonoBehaviour
         // Instantiate the particle system at the position of the wheat destroyed
         GameObject particles = Instantiate(wheatDestroyParticles, position, Quaternion.identity);
         
-        // Optionally, set the upward diagonal velocity here if needed
+        
         ParticleSystem ps = particles.GetComponent<ParticleSystem>();
         if (ps != null)
         {
