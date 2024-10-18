@@ -10,10 +10,10 @@ public class SimpleGPUInstance : MonoBehaviour
     public Terrain terrain; // Reference to the terrain
 
     // Field constraints
-    public float fieldStartX = -290;
-    public float fieldEndX = -189;
-    public float fieldStartZ = 100;
-    public float fieldEndZ = 200;
+    public float fieldStartX = -300;
+    public float fieldEndX = -185;
+    public float fieldStartZ = 50;
+    public float fieldEndZ = 176;
 
     public List<List<Matrix4x4>> Batches = new List<List<Matrix4x4>>(); // Batches of 1,023
 
