@@ -4720,6 +4720,71 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 632610477}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &652873690
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1931076612853715716, guid: 3762281f58f2241deae7738af0d8f777, type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1931076612853715716, guid: 3762281f58f2241deae7738af0d8f777, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -347.5185
+      objectReference: {fileID: 0}
+    - target: {fileID: 1931076612853715716, guid: 3762281f58f2241deae7738af0d8f777, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -20.768744
+      objectReference: {fileID: 0}
+    - target: {fileID: 1931076612853715716, guid: 3762281f58f2241deae7738af0d8f777, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 117.92024
+      objectReference: {fileID: 0}
+    - target: {fileID: 1931076612853715716, guid: 3762281f58f2241deae7738af0d8f777, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1931076612853715716, guid: 3762281f58f2241deae7738af0d8f777, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1931076612853715716, guid: 3762281f58f2241deae7738af0d8f777, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1931076612853715716, guid: 3762281f58f2241deae7738af0d8f777, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1931076612853715716, guid: 3762281f58f2241deae7738af0d8f777, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1931076612853715716, guid: 3762281f58f2241deae7738af0d8f777, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1931076612853715716, guid: 3762281f58f2241deae7738af0d8f777, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6942039571328496782, guid: 3762281f58f2241deae7738af0d8f777, type: 3}
+      propertyPath: m_Name
+      value: WheatDestroyParticles
+      objectReference: {fileID: 0}
+    - target: {fileID: 8042179252239503122, guid: 3762281f58f2241deae7738af0d8f777, type: 3}
+      propertyPath: VelocityModule.z.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8042179252239503122, guid: 3762281f58f2241deae7738af0d8f777, type: 3}
+      propertyPath: VelocityModule.inWorldSpace
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3762281f58f2241deae7738af0d8f777, type: 3}
 --- !u!1001 &663043341
 PrefabInstance:
   m_ObjectHideFlags: 0
