@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SimpleGPUInstance : MonoBehaviour
 {
-    public int Instances = 600; // Increase the number of instances
+    public int Instances = 1000; // Increase the number of instances
     public Mesh mesh;
     public Material[] Materials; // Ensure they are GPU-enabled
     public Terrain terrain; // Reference to the terrain
@@ -13,7 +13,7 @@ public class SimpleGPUInstance : MonoBehaviour
     public float fieldStartX = -300;
     public float fieldEndX = -185;
     public float fieldStartZ = 50;
-    public float fieldEndZ = 176;
+    public float fieldEndZ = 200;
 
     public List<List<Matrix4x4>> Batches = new List<List<Matrix4x4>>(); // Batches of 1,023
 
@@ -57,6 +57,8 @@ public class SimpleGPUInstance : MonoBehaviour
 
                 // Sample the terrain height for the y-coordinate
                 float y = terrain.SampleHeight(new Vector3(x, 0, z)) + terrain.transform.position.y;
+
+               
 
                 // Create the transformation matrix with the desired scale
                 Matrix4x4 matrix = Matrix4x4.TRS(
