@@ -47,7 +47,7 @@ public class WheatDestroyer : MonoBehaviour
     }
 
     private void TriggerParticleEffect(Vector3 position)
-    {
+    {  
         // Instantiate the particle system at the position of the wheat destroyed
         GameObject particles = Instantiate(wheatDestroyParticles, position, Quaternion.identity);
         
