@@ -1,12 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI; // Required for working with UI elements
 
 public class WheatDestroyer : MonoBehaviour
 {
     public SimpleGPUInstance wheatSpawner; // Reference to the wheat spawner script
     private Collider combineCollider;      // Reference to the combine harvester's header collider
-    public Slider fillBar;                 // Reference to the UI Slider fill bar
     private List<List<Matrix4x4>> batches;
     private int totalWheatCount;           // Total number of wheat instances at the start
     private int remainingWheatCount;       // Track remaining wheat
@@ -33,9 +31,6 @@ public class WheatDestroyer : MonoBehaviour
         }
 
         remainingWheatCount = totalWheatCount;
-
-        // Ensure the fill bar starts at 0%
-        UpdateFillBar();
     }
 
     void Update()
@@ -57,9 +52,8 @@ public class WheatDestroyer : MonoBehaviour
                     // Trigger particle effects when wheat is destroyed
                     TriggerParticleEffect(wheatPosition);
 
-                    // Decrease the remaining wheat count and update the fill bar
+                    // Decrease the remaining wheat count
                     remainingWheatCount--;
-                    UpdateFillBar();
                 }
             }
         }
@@ -80,13 +74,5 @@ public class WheatDestroyer : MonoBehaviour
 
         // Destroy the particle system after its lifetime
         Destroy(particles, 3f);
-    }
-
-    // Update the fill bar based on the remaining wheat count
-    private void UpdateFillBar()
-    {
-        // Slider value is between 0 and 1
-        float progress = 1 - ((float)remainingWheatCount / totalWheatCount);
-        fillBar.value = progress;
     }
 }
