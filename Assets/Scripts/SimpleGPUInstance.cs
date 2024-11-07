@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class SimpleGPUInstance : MonoBehaviour
 {
-    public int Instances = 1000; // Increase the number of instances
+    public int Instances = 1000; 
     public Mesh mesh;
-    public Material[] Materials; // Ensure they are GPU-enabled
+    public Material[] Materials; 
     public Terrain terrain; // Reference to the terrain
 
     // Field constraints
@@ -36,8 +36,8 @@ public class SimpleGPUInstance : MonoBehaviour
         float fieldAreaDepth = fieldEndZ - fieldStartZ;
 
         // Number of rows and columns
-        int maxRows = Mathf.CeilToInt(Mathf.Sqrt(Instances)); // Adjust to your preferred logic
-        int maxColumns = Mathf.CeilToInt(Mathf.Sqrt(Instances)); // Adjust to your preferred logic
+        int maxRows = Mathf.CeilToInt(Mathf.Sqrt(Instances)); 
+        int maxColumns = Mathf.CeilToInt(Mathf.Sqrt(Instances));
 
         // Calculate the distance between each wheat in the grid (reduce this value for closer spacing)
         float rowDistance = fieldAreaDepth / maxRows * 0.75f; //distance between instanced meshes.
